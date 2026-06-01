@@ -126,8 +126,8 @@ body {
 
 .gen-button:hover {
     transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0px #ee1515;
-    border-color: #ee1515;
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+    border-color: #333;
 }
 
 .gen-button.active {
