@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail of {{ pokemon.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='detail.css') }}">
+    <link rel="preload" as="image" href="{{ pokemon.artwork }}">
+</head>
+<body>
+
+
+
+    {% if prev_name %}
+        <a href="{{ url_for('pokemon_detail', name=prev_name) }}" class="side-arrow left-arrow">
+        <img src="{{ prev_sprite }}" alt="Previous Pokémon">
+        </a>
+    {% endif %}
+    {% if next_name %}
+        <a href="{{ url_for('pokemon_detail', name=next_name) }}" class="side-arrow right-arrow">
+        <img src="{{ next_sprite }}" alt="Next Pokémon">
+        </a>
+    {% endif %}
+
+
+    <div class="main-card">
+
+        <h1 class="detail-name">
+            {{ pokemon.name.capitalize() }}
+        </h1>
+
+        <img class="detail-artwork" src="{{ pokemon.artwork }}" alt="{{ pokemon.name }}">
+
+        <div class="type-container">
+            <!-- MAIN TYPE -->
+            <span class="type-badge {{ pokemon.type1.lower() }}">
+                <img src="/static/icons/{{ pokemon.type1.lower() }}.svg" alt="" class="type-icon">
+                {{ pokemon.type1.capitalize() }}
+            </span>
+
+            <!-- 2ND TYPE -->
+            {% if pokemon.type2 %}
+                <span class="type-badge {{ pokemon.type2.lower() }}">
+                    <img src="/static/icons/{{ pokemon.type2.lower() }}.svg" alt="" class="type-icon">
+                    {{ pokemon.type2.capitalize() }}
+                </span>
+            {% endif %}
+        </div>
+
+        <div class="names-detail">
+            <span class="name-jap">{{ pokemon.jap_name }}</span>
+            {% if pokemon.romanji and pokemon.romanji.lower() != "not found" %}
+                <span class="jap_romanji">({{ pokemon.romanji }})</span>
+            {% endif %}
+        </div>
+
+        <p class="flavor-text">{{ pokemon.flavor_text }}</p>
+
+        <div class="gender-section">
+            {% if pokemon.gender_label.lower() != "genderless" %}
+                <div class="gender-bar" style="background: linear-gradient(to right, #ff69b4 {{ pokemon.female }}%, #1e90ff {{ pokemon.female }}%);"></div>
+                <span class="gender-label">{{ pokemon.gender_label }}</span>
+            {% else %}
+                <span class="gender-label">{{ pokemon.gender_label }}</span>
+            {% endif %}
+        </div>
+
+        <div class="basic-info">
+            <div class="info-item">
+                <span class="value">{{ pokemon.weight / 10 }} kg</span>
+                <span class="label">Weight</span>
+            </div>
+            <div class="info-item">
+                <span class="value">{{ pokemon.height / 10 }} m</span>
+                <span class="label">Height</span>
+            </div>
+        </div>
+
+        <table class="stats-table">
+            {% for s in stats %}
+            <tr>
+                <td class="stat-name">{{ s.replace("_"," ").capitalize() }}</td>
+                <td class="stat-bar-cell">
+                    <div class="bar-container">
+                        <div class="bar-fill" style="width:{{ pokemon[s] / 255 * 100 }}%;"></div>
+                    </div>
+                </td>
+                <td class="stat-number">{{ pokemon[s] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+    <div class="bottom-controls">
+            <a href="{{ url_for('index') }}" class="return-button">&#8592 RETURN</a>
+    </div>
+
+
+</body>
+</html>

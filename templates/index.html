@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokedex web app</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1 class="main-header">
+        Pokédex
+    </h1>
+    <hr width="30%" />
+    <div class="gen-filter"> <!-- <FILTR GENERACE>  -->
+        {% for i in range(1,10) %}
+            <a href="/?gen={{ i }}&type={{ selected_type }}"
+               class="gen-button {% if selected_gen|string == i|string %}active{% endif%}">
+                Gen {{ i }}
+            </a>
+        {% endfor %}
+    </div>
+    <div class="type-filter"> <!-- <FILTR TYPE>  -->
+        <a href="/?gen={{ selected_gen }}">
+            All types
+        </a>
+        {% for t in type_list %}
+            <a href="/?gen={{ selected_gen|string }}&type={{ t|string }}"
+               class="type-button {{ t.lower() }} {% if selected_type|string == t|string %}active{% endif %}" >
+                <img class="icon" src="static/icons/{{ t|string }}.svg">
+            </a>
+        {% endfor %}
+    </div>
+    <div class="pokedex-container"> <!-- <POKEMON BOX>  -->
+        {% for p in pokemons %}
+        <a href="{{ url_for('pokemon_detail', name=p.name.lower()) }}" class="pokemon-card-link">
+            <div class="pokemon-card" data-name="{{ p.name.lower() }}"> <!-- <Pokemon card>  -->
+
+                <img class="pokemon__img" src="{{ p.sprite }}">
+
+                <h3 class="pokemon__name">{{ p.name.capitalize() }}</h3>
+
+                <div class="pokemon__types">
+                    <span class="type__badge type__badge--{{ p.type1 }}">
+                        {{ p.type1.capitalize() }}
+                    </span>
+
+                    {% if p.type2 %}
+                    <span class="type__badge type__badge--{{ p.type2 }}">
+                        {{ p.type2.capitalize() }}
+                    </span>
+                    {% endif %}
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,286 @@
+
+
+body {
+    background-color: #f4f4f4;
+    font-family: sans-serif;
+    }
+
+.main-header {
+    font-size: 3rem;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center
+}
+
+.pokedex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    max-width: 975px;
+    margin: 0 auto;
+    width: 90%;
+    height: 60vh;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    align-content: space-evenly
+}
+
+.pokemon-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    width: 150px;
+    height: 140px;
+    padding: 15px;
+    padding-top: 0;
+    padding-right: 0;
+    padding-left: 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s ease;
+}
+
+.pokemon-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.pokemon-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    cursor: pointer;
+}
+
+.pokemon__img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.pokemon__name {
+    margin: 0 0;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.pokedex-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+.pokedex-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+
+.pokedex-container::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 15px;
+}
+
+
+.pokedex-container::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+.gen-filter {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    max-width: 1200px;
+    margin: 40px auto;
+    flex-wrap: nowrap;
+    padding: 0;
+}
+
+.gen-button {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 2px;
+    background: white;
+    border: 2px solid #333;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.2s;
+    box-shadow: 3px 3px 0px #333;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.region-name {
+    font-size: 0.9rem;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+.gen-button:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #ee1515;
+    border-color: #ee1515;
+}
+
+.gen-button.active {
+    background-color: #3498db;
+    color: white;
+    border-color: #333;
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px #333;
+}
+
+.gen-number {
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.region-name {
+    font-size: 1.1rem;
+    font-weight: 900;
+}
+
+.gen-button.active .gen-number {
+    opacity: 1;
+}
+
+
+.type-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+    padding: 10px;
+    background: transparent;
+    border-radius: 8px;
+    justify-content: center;
+}
+
+.type-button, .type-filter a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: #333;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: all 0.2s;
+    border: 2px solid transparent;
+}
+
+.type-button img {
+    width: 20px;
+    height:20px;
+}
+
+.type-filter a:first-child {
+    background-color: #444;
+    color: white;
+}
+
+.type-button:hover, .type-filter a:hover {
+    filter: brightness(0.7);
+    transform: translateY(-2px);
+}
+
+
+.type-button.active {
+    color: white;
+    border-color: black;
+    transform: scale(1.2);
+}
+
+
+.bug {
+    background: #92BC2C;
+}
+
+.dark {
+    background: #595761;
+}
+
+.dragon {
+    background: #0C69C8;
+}
+
+.electric {
+    background: #F2D94E;
+}
+
+.fire {
+    background: #FBA54C;
+}
+
+.fairy {
+    background: #EE90E6;
+}
+
+.fighting {
+    background: #D3425F;
+}
+
+.flying {
+    background: #A1BBEC;
+}
+
+.ghost {
+    background: #5F6DBC;
+}
+
+.grass {
+    background: #5FBD58;
+}
+
+.ground {
+    background: #DA7C4D;
+}
+
+.ice {
+    background: #75D0C1;
+}
+
+.normal {
+    background: #A0A29F;
+}
+
+.poison {
+    background: #B763CF;
+}
+
+.psychic {
+    background: #FA8581;
+}
+
+.rock {
+    background: #C9BB8A;
+}
+
+.steel {
+    background: #5695A3;
+}
+
+.water {
+    background: #539DDF;
+}
+
+.type__badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+    gap: 5px;
+}
