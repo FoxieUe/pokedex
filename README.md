@@ -1,43 +1,43 @@
-\# Pokémon Pokédex
+# Pokémon Pokédex
 
 
 
-\## Features
+## Features
 
 
 
-* Browse Pokémon by generations and type
-* View detail of Pokémon information
-* Display basic information and battle stats
-* Previous / next Pokémon navigation
+- Browse Pokémon by generations and type
+- View detail of Pokémon information
+- Display basic information and battle stats
+- Previous / next Pokémon navigation
 
 
 
-\## Technologies used
+## Technologies used
 
 
 
-* Python
-* Flask
-* Pandas
-* Requests
-* HTML
-* CSS
+- Python
+- Flask
+- Pandas
+- Requests
+- HTML
+- CSS
 
 
 
-\## Future improvements
+## Future improvements
 
-* Add wordle-style game
-* Add more information in detail
-
-
-
-\## Screenshots 
+- Add wordle-style game
+- Add more information in detail
 
 
 
-\### Main page
+## Screenshots 
+
+
+
+### Main page
 
 
 
@@ -45,7 +45,7 @@
 
 
 
-\### Pokémon detail
+### Pokémon detail
 
 
 
