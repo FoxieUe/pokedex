@@ -41,7 +41,7 @@
 
 
 
-!\[Main Page](./screenshots/main\_page.png)
+!\[Main Page](https://raw.githubusercontent.com/FoxieUe/pokedex/refs/heads/main/screenshots/main_page.png)
 
 
 
