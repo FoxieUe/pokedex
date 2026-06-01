@@ -49,5 +49,5 @@
 
 
 
-!\[Pokémon Detail](./screenshots/detail\_page.png)
+!\[Pokémon Detail](https://github.com/FoxieUe/pokedex/blob/main/screenshots/detail_page.png)
 
