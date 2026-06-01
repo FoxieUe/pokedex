@@ -32,6 +32,9 @@
 - Add more information in detail
 
 
+## Live web app
+
+https://foxieue.eu.pythonanywhere.com/
 
 ## Screenshots 
 
