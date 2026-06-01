@@ -41,7 +41,7 @@
 
 
 
-!\[Main Page](screenshots/main\_page.png)
+!\[Main Page](./screenshots/main\_page.png)
 
 
 
@@ -49,5 +49,5 @@
 
 
 
-!\[Pokémon Detail](screenshots/detail\_page.png)
+!\[Pokémon Detail](./screenshots/detail\_page.png)
 
